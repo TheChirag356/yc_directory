@@ -3,6 +3,7 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
+import "easymde/dist/easymde.min.css";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",

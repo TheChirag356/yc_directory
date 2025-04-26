@@ -46,12 +46,12 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0,0,0);
+  --foreground: oklch(0, 0, 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0,0,0);
+  --card-foreground: oklch(0, 0, 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0,0,0);
-  --primary: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0, 0, 0);
+  --primary: oklch(0.6 0.25 7.9);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -69,7 +69,7 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0,0,0);
+  --sidebar-foreground: oklch(0, 0, 0);
   --sidebar-primary: oklch(0.208 0.042 265.755);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.968 0.007 247.896);
@@ -79,7 +79,7 @@
 }
 
 .dark {
-  --background: oklch(0,0,0);
+  --background: oklch(0, 0, 0);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -123,4 +123,94 @@
 
 body {
   font-family: var(--font-work-sans), Arial, sans-serif;
+}
+
+@layer utilities {
+  .pink_container {
+    @apply w-full bg-primary min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
+    background-image: linear-gradient(
+      to right,
+      transparent 49.5%,
+      rgba(251, 232, 67, 0.2) 49.5%,
+      rgba(251, 232, 67, 0.6) 50.5%,
+      transparent 50.5%
+    );
+    background-size: 5% 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+  .heading {
+    @apply uppercase bg-black px-6 py-3 font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
+  }
+
+  .sub-heading {
+    @apply font-medium text-[20px] text-white max-w-2xl text-center break-words;
+  }
+
+  /* Search Form */
+  .search-form {
+    @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+  }
+
+  .search-input {
+    @apply flex-1 font-bold w-full h-auto outline-none;
+  }
+
+  .search-btn {
+    @apply size-[50px] rounded-full bg-black flex justify-center justify-items-center;
+  }
+
+  .section_container {
+    @apply px-6 py-10 max-w-7xl mx-auto;
+  }
+
+  .card_grid {
+    @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
+  }
+
+  .card_grid-sm {
+    @apply grid sm:grid-cols-2 gap-5;
+  }
+
+  .no-result {
+    @apply text-black text-sm font-normal;
+  }
+
+  /* startupcard */
+  .startup-card {
+    @apply bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-md hover:border-primary transition-all duration-500 hover:shadow-md hover:bg-primary;
+  }
+
+  .startup-card_date {
+    @apply font-medium text-[16px] bg-primary px-4 py-2 rounded-full group-hover:bg-white;
+  }
+
+  .startup-card_desc {
+    @apply font-normal text-[16px] line-clamp-2 my-3 text-black break-all;
+  }
+
+  .startup-card_img {
+    @apply w-full h-[164px] rounded-[10px] object-cover;
+  }
+
+  .startup-card_btn {
+    @apply rounded-full bg-black font-medium text-[16px] text-white px-5 py-3;
+  }
+
+  .startup-card_skeleton {
+    @apply w-full h-96 rounded-[22px] bg-zinc-400;
+  }
+
+  .pattern {
+    background-image: linear-gradient(
+      to right,
+      transparent 49.5%,
+      rgba(251, 232, 67, 0.2) 49.5%,
+      rgba(251, 232, 67, 0.6) 50.5%,
+      transparent 50.5%
+    );
+    background-size: 5% 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
 }
